@@ -15,15 +15,15 @@
  */
 
 /**
- * 
+ *
  * @param {string} email
  * @param {Function} onError
  * @param {Function} onSuccess
  */
 
 export const createUser = (email, onError, onSuccess) => {
-    if (typeof email !== "string" || email === "") {
-        return onError();
-    }
-    return onSuccess(email);
-}
+  if (typeof email !== "string" || email === "") {
+    return onError();
+  }
+  return onSuccess(email);
+};

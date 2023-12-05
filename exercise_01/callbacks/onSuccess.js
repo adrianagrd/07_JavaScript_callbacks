@@ -10,11 +10,11 @@
  */
 
 /**
- * 
+ *
  * @param {string} value
- * @returns {Array} 
+ * @returns {Array}
  */
 
 export const onSuccess = (value) => {
-    return value.split(" ");
+  return value.split(" ");
 };

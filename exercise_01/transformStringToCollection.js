@@ -14,16 +14,15 @@
  */
 
 /**
- * 
+ *
  * @param {*} value
  * @param {Function} onError
  * @param {Function} onSuccess
  */
 
 export const transformStringToCollection = (value, onError, onSuccess) => {
-    if (typeof value !== "string" || value === "") {
-        return onError();
-    }
-    return onSuccess(value); 
+  if (typeof value !== "string" || value === "") {
+    return onError();
+  }
+  return onSuccess(value);
 };
-

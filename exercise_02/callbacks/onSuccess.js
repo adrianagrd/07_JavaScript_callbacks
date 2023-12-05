@@ -10,11 +10,11 @@
  */
 
 /**
- * 
+ *
  * @param {string} email
- * @returns {string} 
+ * @returns {string}
  */
 
 export const onSuccess = (email) => {
-    return `User with email ${email} has been correctly created`;
+  return `User with email ${email} has been correctly created`;
 };

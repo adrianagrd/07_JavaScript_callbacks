@@ -9,10 +9,10 @@
  */
 
 /**
- * 
- * @returns {string} 
+ *
+ * @returns {string}
  */
 
 export const onError = () => {
-    return 'Error: user not created';
+  return "Error: user not created";
 };
