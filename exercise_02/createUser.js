@@ -1,3 +1,4 @@
+import { validateString } from "../helpers/validateString.js";
 /**
  * Define 'createUser' function and signature (JSDocs)
  *
@@ -19,16 +20,13 @@
  * @param {string} email
  * @param {Function} onError
  * @param {Function} onSuccess
+ * @returns {string}
  */
 
 export const createUser = (email, onError, onSuccess) => {
   const randomNumber = Math.random();
 
-  if (randomNumber < 0.5) {
-    return onError();
-  }
-
-  if (typeof email !== "string" || email === "") {
+  if (!validateString(email) || randomNumber < 0.5) {
     return onError();
   }
 
