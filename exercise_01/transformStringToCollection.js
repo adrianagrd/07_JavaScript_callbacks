@@ -20,7 +20,7 @@
  * @param {Function} onSuccess
  */
 
-export const transformStringToCollection = (value, onError, onSuccess) => {
+export const transformStringToArray = (value, onError, onSuccess) => {
   if (typeof value !== "string" || value === "") {
     return onError();
   }
