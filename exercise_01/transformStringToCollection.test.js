@@ -1,33 +1,42 @@
+import { transformStringToArray } from "./transformStringToCollection.js";
 
-describe('transformStringToCollection', () => {
-    it('should call onError callback if value is not a string', () => {
-        const onError = jest.fn();
-        const onSuccess = jest.fn();
+describe("Given a transformStringtoArray function", () => {
+  test("should call onError callback if value is not a string", () => {
+    //Arrange
+    const onError = jest.fn();
+    const onSuccess = jest.fn();
 
-        transformStringToCollection(123, onError, onSuccess);
+    //Act
+    const result = transformStringToArray(12, onError, onSuccess);
 
-        expect(onError).toHaveBeenCalled();
-        expect(onSuccess).not.toHaveBeenCalled();
-    });
+    //Assert
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
 
-    it('should call onError callback if value is an empty string', () => {
-        const onError = jest.fn();
-        const onSuccess = jest.fn();
+  test("should call onError callback if value is an empty string", () => {
+    //Arrange
+    const onError = jest.fn();
+    const onSuccess = jest.fn();
 
-        transformStringToCollection('', onError, onSuccess);
+    //Act
+    const result = transformStringToArray("", onError, onSuccess);
 
-        expect(onError).toHaveBeenCalled();
-        expect(onSuccess).not.toHaveBeenCalled();
-    });
+    //Assert
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
 
-    it('should call onSuccess callback if value is a non-empty string', () => {
-        const onError = jest.fn();
-        const onSuccess = jest.fn();
+  test("should call onError callback if value is a string", () => {
+    //Arrange
+    const onError = jest.fn();
+    const onSuccess = jest.fn();
 
-        transformStringToCollection('Hello, World!', onError, onSuccess);
+    //Act
+    const result = transformStringToArray("Adriana", onError, onSuccess);
 
-        expect(onError).not.toHaveBeenCalled();
-        expect(onSuccess).toHaveBeenCalled();
-    });
+    //Assert
+    expect(onSuccess).toHaveBeenCalledTimes(1);
+    expect(onError).not.toHaveBeenCalled();
+  });
 });
-import { transformStringToCollection } from './transformStringToCollection';

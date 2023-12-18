@@ -9,11 +9,11 @@
  */
 
 /**
- * 
+ *
  * @param {*} none
  * @returns {Array}
  */
 
 export const onError = () => {
-    return [];
+  return [];
 };
