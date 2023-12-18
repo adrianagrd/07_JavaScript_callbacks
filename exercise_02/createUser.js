@@ -23,11 +23,14 @@
 
 export const createUser = (email, onError, onSuccess) => {
   const randomNumber = Math.random();
+
   if (randomNumber < 0.5) {
     return onError();
   }
+
   if (typeof email !== "string" || email === "") {
     return onError();
   }
+
   return onSuccess(email);
 };
